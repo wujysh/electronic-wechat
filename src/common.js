@@ -99,4 +99,12 @@ Common.MENU = {
   checkRelease: 'Check for New Release',
 };
 
+Common.globalShortcut = [
+{
+  "Name": "ToggleChat",
+  "Shortcut": "CommandOrControl+Alt+Z",
+  "func": "() => {this.tray.toggleSplashAndWeChat()}"
+}
+];
+
 module.exports = Common;

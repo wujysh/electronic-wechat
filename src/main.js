@@ -2,7 +2,7 @@
 'use strict';
 
 const path = require('path');
-const {app, ipcMain} = require('electron');
+const {app, ipcMain, globalShortcut} = require('electron');
 
 const UpdateHandler = require('./handlers/update');
 const Common = require('./common');
@@ -32,6 +32,12 @@ class ElectronicWeChat {
       this.createWeChatWindow();
       this.createTray();
       this.wechatWindow.setTray(this.tray);
+
+      // register global shortcut
+      let ShortcutList = Common.globalShortcut;
+      for (var i = 0; i < ShortcutList.length; i++) {
+        globalShortcut.register(ShortcutList[i]['Shortcut'], eval(ShortcutList[i]['func']));
+      }
 
       if (!AppConfig.readSettings('language')) {
         AppConfig.saveSettings('language', 'en');
