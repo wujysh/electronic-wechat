@@ -114,6 +114,7 @@ class WeChatWindow {
 
   show() {
     this.wechatWindow.show();
+    this.wechatWindow.focus();
     this.tray.setWechatShown();
     this.isShown = true;
   }
