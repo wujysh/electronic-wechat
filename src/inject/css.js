@@ -72,7 +72,7 @@ CSSInjector.commonCSS = `
       display: none !important
     }
     /* Group mention: user selection box */
-    div#userSelectionBox select option:hover {
+    div#userSelectionBox select option:hover, div#userSelectionBox select option.hovered {
       background: #eeeeee;
     }
     div#userSelectionBox select option {
@@ -90,12 +90,15 @@ CSSInjector.commonCSS = `
       border: none;
       outline: none;
       height: inherit;
+      display: table;
     }
     div#userSelectionBox {
       box-shadow: 1px 1px 10px #ababab;
       background: #fff;
       display: none;
       position: fixed;
+      overflow-x: hidden;
+      overflow-y: auto;
       bottom: ${Common.MENTION_MENU_INITIAL_Y}px;
       left: ${Common.MENTION_MENU_INITIAL_X}px;
     }
@@ -146,6 +149,13 @@ CSSInjector.osxCSS = `
       .nav_view {
         top: 36px !important
       }
+    }
+`;
+
+CSSInjector.enlargeEmoji = `
+    .message .custom_emoji {
+      width: 120px !important;
+      height: auto !important;
     }
 `;
 
