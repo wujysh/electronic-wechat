@@ -108,7 +108,7 @@ CSSInjector.commonCSS = `
       border: 0;
       font-size: 14px;
     }
-    @media (max-width: 512px) {
+    @media (max-width: 640px) {
       .panel {
         width: 75px !important;
         transition: width .3s;
