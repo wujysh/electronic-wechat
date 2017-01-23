@@ -115,12 +115,14 @@ class WeChatWindow {
   show() {
     this.wechatWindow.show();
     this.wechatWindow.focus();
+    this.wechatWindow.webContents.send('show-wechat-window');
     this.tray.setWechatShown();
     this.isShown = true;
   }
 
   hide() {
     this.wechatWindow.hide();
+    this.wechatWindow.webContents.send('hide-wechat-window');
     this.tray.setWechatHidden();
     this.isShown = false;
   }
